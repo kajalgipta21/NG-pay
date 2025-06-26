@@ -2,40 +2,46 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-
 @Injectable({
   providedIn: 'root'
 })
 export class MyService {
-  
- 
-  private baseUrl = 'https://skytm-api.azurewebsites.net'; 
+  private baseUrl = 'https://skytm-api.azurewebsites.net';
 
   constructor(private http: HttpClient) {}
-  payMoney(data: { to: string; amount: number }): Observable<any> {
-    return this.http.post(this.baseUrl+"/api/Transactions/pay", data);
-  }
 
+  // Add money
   addMoney(data: { amount: number; phoneNumber: string }): Observable<any> {
-    return this.http.post(this.baseUrl+"/api/Wallet/add", data);  
+    return this.http.post(`${this.baseUrl}/api/Wallet/add`, data);
   }
-  
 
-  getBalance(phoneNumber: string):Observable<any> {
-    return this.http.get<any>(this.baseUrl+"/api/Users/balance?phoneNumber=");
+  // Pay money
+  payMoney(data: { to: string; amount: number }): Observable<any> {
+    return this.http.post(`${this.baseUrl}/api/Transactions/pay`, data);
   }
-  getTransactionHistory(phoneNumber: string):Observable<any> {
-    return this.http.get<any>(this.baseUrl+"/api/Transactions/history?phoneNumber=");
+
+  // Get balance
+  getBalance(phoneNumber: string): Observable<any> {
+    return this.http.get(`${this.baseUrl}/api/Users/balance?phoneNumber=${phoneNumber}`);
   }
-  deleteTransactiongetHistory(phoneNumber: string): Observable<any> {
-    return this.http.delete(this.baseUrl+"/api/Transactions/history?phoneNumber=");
+
+  // Get transaction history
+  getTransactionHistory(phoneNumber: string): Observable<any> {
+    return this.http.get(`${this.baseUrl}/api/Transactions/history?phoneNumber=${phoneNumber}`);
   }
+
+  // Delete transaction history
+  deleteTransactionHistory(phoneNumber: string): Observable<any> {
+    return this.http.delete(`${this.baseUrl}/api/Transactions/history?phoneNumber=${phoneNumber}`);
+  }
+
+  // Register user
   register(userData: any): Observable<any> {
-    return this.http.post(this.baseUrl+"/api/Auth/signup", userData);
+    return this.http.post(`${this.baseUrl}/api/Auth/signup`, userData);
   }
-  
 
-  login(credentials: { username: string, password: string }): Observable<any> {
-    return this.http.post(this.baseUrl+"/api/Auth/login", credentials);
+  // Login user
+  login(credentials: { username: string; password: string }): Observable<any> {
+    return this.http.post(`${this.baseUrl}/api/Auth/login`, credentials);
   }
 }

@@ -13,6 +13,7 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-checkb',
   templateUrl: './checkb.html',
+  styleUrls: ['./checkb.css'],
   imports: [FormsModule, HttpClientModule,
       ToastModule,
       TableModule,

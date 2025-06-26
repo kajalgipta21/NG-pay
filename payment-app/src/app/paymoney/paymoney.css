@@ -1,0 +1,78 @@
+.container {
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    max-width: 500px;
+    margin: auto;
+    animation: slideFadeIn 0.6s ease-in-out;
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .container:hover {
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.15);
+  }
+  
+  h3 {
+    font-weight: 700;
+    color: #007bff;
+  }
+  
+  .form-group label {
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #333;
+  }
+  
+  .form-control {
+    border-radius: 8px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    transition: border 0.3s ease;
+  }
+  
+  .form-control:focus {
+    border-color: #28a745;
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+  }
+  
+  button.btn-success {
+    padding: 12px;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  button.btn-success:hover {
+    background-color: #218838;
+  }
+  
+  .alert {
+    border-radius: 10px;
+    font-weight: 500;
+  }
+  
+  @media (max-width: 576px) {
+    .container {
+      padding: 20px;
+      margin: 20px;
+    }
+  
+    h3 {
+      font-size: 1.5rem;
+    }
+  }
+  
+  /* Animation */
+  @keyframes slideFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  

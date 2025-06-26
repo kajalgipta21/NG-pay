@@ -16,6 +16,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 @Component({
   selector: 'app-register',
   templateUrl: './register.html',
+  styleUrls: ['./register.css'],
   providers: [MessageService,MyService],
   imports:[
     CardModule,
