@@ -16,6 +16,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.html',
+  styleUrls: ['./login.css'],
   providers: [MessageService,MyService],
   imports:[PasswordModule,ToastModule,CardModule,CommonModule,FormsModule,RouterLink,RouterLinkActive,
     HttpClientModule,

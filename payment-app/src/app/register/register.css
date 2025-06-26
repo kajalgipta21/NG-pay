@@ -1,0 +1,77 @@
+:host ::ng-deep .p-card {
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    transition: box-shadow 0.3s ease;
+  }
+  
+  :host ::ng-deep .p-card:hover {
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  }
+  
+  :host ::ng-deep .p-fluid .field {
+    margin-bottom: 1.5rem;
+  }
+  
+  :host ::ng-deep label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 6px;
+    color: #333;
+  }
+  
+  :host ::ng-deep input[pInputText], 
+  :host ::ng-deep input[type="email"], 
+  :host ::ng-deep input[type="phonenumber"],
+  :host ::ng-deep input[pPassword] {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    transition: border-color 0.3s ease;
+  }
+  
+  :host ::ng-deep input:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
+  }
+  
+  :host ::ng-deep button[pButton] {
+    width: 100%;
+    padding: 12px;
+    font-weight: bold;
+    border-radius: 10px;
+    background-color: #007bff;
+    color: #fff;
+    transition: background-color 0.3s ease;
+  }
+  
+  :host ::ng-deep button[pButton]:hover {
+    background-color: #0056b3;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: 500;
+    transition: color 0.2s ease-in-out;
+  }
+  
+  a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+  }
+  
+  @media (max-width: 768px) {
+    :host ::ng-deep .p-card {
+      width: 90% !important;
+      margin: 20px auto;
+    }
+  }
+  

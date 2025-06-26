@@ -7,6 +7,7 @@ import { MyService } from '../myservice';
 @Component({
   selector: 'app-paymoney',
   templateUrl: './paymoney.html',
+  styleUrls: ['./paymoney.css'],
   imports: [
     FormsModule,
     HttpClientModule,CommonModule

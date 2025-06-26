@@ -15,7 +15,7 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
   selector: 'app-dashboard',
   templateUrl: './dashboard.html',
   styleUrls: ['./dashboard.css'],
-  providers: [MessageService,MyService],
+  providers: [],
  
   imports: [
     HttpClientModule,RouterLink,

@@ -10,6 +10,7 @@ import { Checkb } from './checkb/checkb';
 import { AddMoney } from './addmoney/addmoney';
 import { Dashboard } from './dashboard/dashboard';
 import { PayMoney } from './paymoney/paymoney';
+import { Seeth } from './seeth/seeth';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'login',pathMatch: 'full' },
@@ -19,7 +20,7 @@ export const routes: Routes = [
   { path: 'addmoney', component: AddMoney },
   { path: 'paymoney', component: PayMoney },
   { path: 'checkb', component: Checkb },
-  { path: 'seeth', component: Set },
+  { path: 'seeth', component: Seeth },
   { path: 'deleteth', component: deleteth },
 ];
 
