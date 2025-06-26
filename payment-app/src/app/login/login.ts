@@ -11,14 +11,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.html',
   providers: [MessageService,MyService],
-  imports:[PasswordModule,ToastModule,CardModule,CommonModule,FormsModule,
+  imports:[PasswordModule,ToastModule,CardModule,CommonModule,FormsModule,RouterLink,RouterLinkActive,
     HttpClientModule,
-    BrowserAnimationsModule,
+    
     CardModule,
     ButtonModule,
     InputTextModule,
@@ -30,6 +31,7 @@ export class Login {
     username: '',
     password: ''
   };
+  router: any;
 
   constructor(private myservice: MyService, private messageService: MessageService) {}
 
@@ -37,6 +39,7 @@ export class Login {
     this.myservice.login(this.credentials).subscribe({
       next: (res) => {
         this.messageService.add({ severity: 'success', summary: 'Login Success', detail: 'Token: ' + res.token });
+        this.router.navigate(['/dashboard']);
       },
       error: () => {
         this.messageService.add({ severity: 'error', summary: 'Login Failed', detail: 'Invalid credentials' });

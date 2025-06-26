@@ -14,7 +14,7 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-deleteth',
   templateUrl: './deleteth.html',
-  imports: [FormsModule, HttpClientModule,FormsModule,
+  imports: [FormsModule, HttpClientModule,
     ToastModule,
     TableModule,
     CardModule,

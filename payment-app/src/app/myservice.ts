@@ -16,7 +16,7 @@ export class MyService {
     return this.http.post(this.baseUrl+"/api/Transactions/pay", data);
   }
 
-  onaddMoney(data: { amount: number; phoneNumber: string }): Observable<any> {
+  addMoney(data: { amount: number; phoneNumber: string }): Observable<any> {
     return this.http.post(this.baseUrl+"/api/Wallet/add", data);  
   }
   

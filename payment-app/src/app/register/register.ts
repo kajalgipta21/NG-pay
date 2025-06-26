@@ -11,16 +11,17 @@ import { ToastModule } from 'primeng/toast';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.html',
   providers: [MessageService,MyService],
-  imports:[BrowserAnimationsModule,
+  imports:[
     CardModule,
     ButtonModule,
     InputTextModule,
-    PasswordModule,PasswordModule,ToastModule,CardModule,CommonModule,FormsModule,
+    PasswordModule,ToastModule,CardModule,CommonModule,FormsModule,RouterLink,RouterLinkActive,
     HttpClientModule]
 })
 export class Register {

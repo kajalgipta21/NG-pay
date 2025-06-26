@@ -12,7 +12,7 @@ import { Dashboard } from './dashboard/dashboard';
 import { PayMoney } from './paymoney/paymoney';
 
 export const routes: Routes = [
-    { path: '**', redirectTo: 'login',pathMatch: 'full' },
+    { path: '', redirectTo: 'login',pathMatch: 'full' },
     { path: 'login', component: Login },
   { path: 'register', component: Register },
   { path: 'dashboard', component: Dashboard },
@@ -23,8 +23,3 @@ export const routes: Routes = [
   { path: 'deleteth', component: deleteth },
 ];
 
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
-})
-export class AppRoutingModule {}

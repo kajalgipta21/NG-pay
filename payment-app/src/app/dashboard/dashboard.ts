@@ -18,7 +18,7 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
   providers: [MessageService,MyService],
  
   imports: [
-    HttpClientModule,
+    HttpClientModule,RouterLink,
     FormsModule,
     ToastModule,
     TableModule,
@@ -27,19 +27,8 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
     InputTextModule,RouterLink,
   ]
 })
-export class Dashboard implements OnInit {
-  balance: number = 0;
-  transactions: any[] = [];
-  amount: number = 0;
-  payData = { to: '', amount: 0 };
-
-  constructor(
-    private myService: MyService,
-    private messageService: MessageService
-  ) {}
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
+export class Dashboard {
   }
 
   
-}
+

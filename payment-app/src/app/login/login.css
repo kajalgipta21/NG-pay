@@ -1,0 +1,58 @@
+/* Center the card on the screen */
+:host ::ng-deep .p-card {
+    margin: 5% auto;
+    padding: 2rem;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    background: #c92b2b;
+    max-width: 450px;
+  }
+  
+  /* Form field spacing */
+  :host ::ng-deep .field {
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Labels styling */
+  :host ::ng-deep label {
+    font-weight: 600;
+    color: #495057;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Input styling */
+  :host ::ng-deep input {
+    width: 100%;
+    padding: 0.6rem;
+    border-radius: 8px;
+    border: 1px solid #ced4da;
+  }
+  
+  /* Button styling */
+  :host ::ng-deep button {
+    width: 100%;
+    border-radius: 8px;
+    font-weight: bold;
+    background-color: #007bff;
+    border: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  :host ::ng-deep button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Register button margin */
+  :host ::ng-deep div:last-child {
+    margin-top: 1rem;
+  }
+  
+  /* Toast position fix */
+  :host ::ng-deep p-toast {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1000;
+  }
+  
