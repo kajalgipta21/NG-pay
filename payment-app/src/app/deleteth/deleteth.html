@@ -1,0 +1,53 @@
+<div class="container mt-5 p-4 shadow rounded bg-light" style="max-width: 600px;">
+    <h3 class="text-center text-primary mb-4">Transaction History</h3>
+  
+    <form (ngSubmit)="getTransactions()" #form="ngForm">
+      <div class="input-group mb-3">
+        <input
+          type="tel"
+          class="form-control"
+          placeholder="Enter phone number"
+          name="phoneNumber"
+          [(ngModel)]="phoneNumber"
+          required
+        />
+        <button type="submit" class="btn btn-primary" [disabled]="!form.form.valid">
+          Search
+        </button>
+      </div>
+    </form>
+  
+    <div *ngIf="transactions.length === 0 && searched" class="alert alert-warning text-center">
+      No transactions found.
+    </div>
+  
+    <div *ngIf="transactions.length > 0">
+      <button class="btn btn-danger mb-3" (click)="deleteTransactions()">Delete All Transactions</button>
+  
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+          <thead class="table-dark">
+            <tr>
+              <th>Date</th>
+              <th>Type</th>
+              <th>Amount</th>
+              <th>To/From</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let txn of transactions">
+              <td>{{ txn.date | date: 'short' }}</td>
+              <td>{{ txn.type }}</td>
+              <td>₹{{ txn.amount }}</td>
+              <td>{{ txn.partyPhone }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  
+    <div *ngIf="message" class="alert mt-3" [ngClass]="{ 'alert-success': success, 'alert-danger': !success }">
+      {{ message }}
+    </div>
+  </div>
+  

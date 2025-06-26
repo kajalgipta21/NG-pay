@@ -1,0 +1,21 @@
+<p>login works!</p>
+<p-card header="Login" class="w-50 mx-auto mt-5">
+    <div class="p-fluid">
+      <div class="field">
+        <label>Username</label>
+        <input pInputText [(ngModel)]="credentials.username" />
+      </div>
+      <div class="field">
+        <label>Password</label>
+        <input pPassword [(ngModel)]="credentials.password" toggleMask="true" />
+      </div>
+      <button pButton label="Login" class="mt-3" (click)="login()" routerLink="/dashboard" routerLinkActive="router-link-active" >Login</button>
+    </div>
+    <div>
+       
+        <button pButton label="Register" class="mt-3"  routerLink="/Register" routerLinkActive="router-link-active" >Register</button>
+    </div>
+    
+  </p-card>
+  <p-toast></p-toast>
+  

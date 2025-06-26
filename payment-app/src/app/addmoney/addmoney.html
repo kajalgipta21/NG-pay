@@ -1,0 +1,36 @@
+
+<p-toast></p-toast>
+
+<div class="container mt-5">
+  <p-card header="Add Money" styleClass="p-shadow-6">
+    <div class="form-group mb-3">
+      <label for="phone">Phone Number</label>
+      <input
+        id="phone"
+        type="text"
+        class="form-control"
+        [(ngModel)]="phoneNumber"
+        placeholder="Enter phone number"
+      />
+    </div>
+
+    <div class="form-group mb-3">
+      <label for="amount">Amount</label>
+      <input
+        id="amount"
+        type="number"
+        class="form-control"
+        [(ngModel)]="amount"
+        placeholder="Enter amount"
+      />
+    </div>
+
+    <button
+      pButton
+      type="button"
+      class="mt-2"
+      label="Add Money"
+      (click)="onAddMoney()"
+    ></button>
+  </p-card>
+</div>

@@ -1,0 +1,36 @@
+
+<p-card header="Register" class="w-50 mx-auto mt-5">
+    <div class="p-fluid">
+      <div class="field">
+        <label>Username</label>
+        <input pInputText [(ngModel)]="user.username" />
+      </div>
+      <div class="field">
+        <label>Email</label>
+        <input pInputText type="email" [(ngModel)]="user.email" />
+      </div>
+      <div class="field">
+      <label>PhoneNumber</label>
+        <input pInputText type="phonenumber" [(ngModel)]="user.phonenumber" />
+      </div>
+      <div class="field">
+
+      <label>Gender</label>
+        <input pInputText  [(ngModel)]="user.gender" />
+      </div>
+      <div class="field">
+        <label>Password</label>
+        <input pPassword [(ngModel)]="user.password" toggleMask="true" />
+      </div>
+      <button pButton label="Register" class="mt-3" (click)="register()" routerLink="/dashboard" routerLinkActive="router-link-active" >Register</button>
+    </div>
+    <div class="text-center mt-3">
+        <a href="#" (click)="toggleForm()">
+          {{ isLogin ? "Don't have an account? Register" : "Already have an account? Login" }}
+        </a>
+      </div>
+      
+    
+  </p-card>
+  <p-toast></p-toast>
+  

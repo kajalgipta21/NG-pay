@@ -1,0 +1,55 @@
+<div class="container mt-5 p-4 shadow rounded bg-light" style="max-width: 500px;">
+    <h3 class="text-center mb-4 text-primary">Pay Money</h3>
+    
+    <form (ngSubmit)="payMoney()" #payForm="ngForm">
+  
+      <div class="form-group mb-3">
+        <label for="senderPhone">Sender Phone Number</label>
+        <input
+          type="tel"
+          id="senderPhone"
+          class="form-control"
+          required
+          name="senderPhone"
+          [(ngModel)]="payment.senderPhone"
+          placeholder="Enter your phone number"
+        />
+      </div>
+  
+      <div class="form-group mb-3">
+        <label for="receiverPhone">Receiver Phone Number</label>
+        <input
+          type="tel"
+          id="receiverPhone"
+          class="form-control"
+          required
+          name="receiverPhone"
+          [(ngModel)]="payment.receiverPhone"
+          placeholder="Enter receiver's phone number"
+        />
+      </div>
+  
+      <div class="form-group mb-4">
+        <label for="amount">Amount</label>
+        <input
+          type="number"
+          id="amount"
+          class="form-control"
+          required
+          name="amount"
+          [(ngModel)]="payment.amount"
+          placeholder="Enter amount"
+          min="1"
+        />
+      </div>
+  
+      <button type="submit" class="btn btn-success w-100" [disabled]="!payForm.form.valid">
+        Pay
+      </button>
+  
+      <div *ngIf="message" class="alert mt-3" [ngClass]="{'alert-success': success, 'alert-danger': !success}">
+        {{ message }}
+      </div>
+    </form>
+  </div>
+  

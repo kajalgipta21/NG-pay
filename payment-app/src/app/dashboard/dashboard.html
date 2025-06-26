@@ -1,0 +1,90 @@
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+  <div class="container-fluid">
+    <a class="navbar-brand fw-bold" href="#">PayPro Dashboard</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" routerLink="/dashboard">Dashboard</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/addmoney">Add Money</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/paymoney">Pay Money</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/checkb">Check Balance</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/seeth">Transaction History</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/deleteth">Delete History</a></li>
+      </ul>
+      
+    </div>
+  </div>
+</nav>
+
+<!-- Dashboard Hero -->
+<section class="dashboard-header text-white text-center py-5">
+  <h1 class="fw-bold">Welcome to Your Wallet</h1>
+  <p class="lead">Manage all your wallet activities in one place.</p>
+</section>
+
+<!-- Dashboard Feature Cards -->
+<div class="container mt-5">
+  <div class="row g-4 text-center">
+    
+    <!-- Add Money -->
+<a [routerLink]="['/add-money']" class="col-md-4 text-decoration-none text-dark">
+  <div class="card dashboard-card h-100 text-center">
+    <div class="card-body">
+      <i class="bi bi-wallet2 dashboard-icon text-success"></i>
+      <h5 class="card-title">Add Money</h5>
+      <p class="card-text">Top up your wallet balance quickly.</p>
+    </div>
+  </div>
+</a>
+
+<!-- Pay Money -->
+<a [routerLink]="['/pay-money']" class="col-md-4 text-decoration-none text-dark">
+  <div class="card dashboard-card h-100 text-center">
+    <div class="card-body">
+      <i class="bi bi-send-plus dashboard-icon text-primary"></i>
+      <h5 class="card-title">Pay Money</h5>
+      <p class="card-text">Send money instantly to anyone.</p>
+    </div>
+  </div>
+</a>
+
+<!-- Check Balance -->
+<a [routerLink]="['/check-balance']" class="col-md-4 text-decoration-none text-dark">
+  <div class="card dashboard-card h-100 text-center">
+    <div class="card-body">
+      <i class="bi bi-bank dashboard-icon text-info"></i>
+      <h5 class="card-title">Check Balance</h5>
+      <p class="card-text">View your current wallet balance.</p>
+    </div>
+  </div>
+</a>
+
+<!-- Transaction History -->
+<a [routerLink]="['/transaction-history']" class="col-md-6 text-decoration-none text-dark">
+  <div class="card dashboard-card h-100 text-center">
+    <div class="card-body">
+      <i class="bi bi-clock-history dashboard-icon text-warning"></i>
+      <h5 class="card-title">Transaction History</h5>
+      <p class="card-text">View all your past transactions.</p>
+    </div>
+  </div>
+</a>
+
+<!-- Delete History -->
+<a [routerLink]="['/delete-history']" class="col-md-6 text-decoration-none text-dark">
+  <div class="card dashboard-card h-100 text-center">
+    <div class="card-body">
+      <i class="bi bi-trash dashboard-icon text-danger"></i>
+      <h5 class="card-title">Delete History</h5>
+      <p class="card-text">Clear your transaction records securely.</p>
+    </div>
+  </div>
+</a>
+
+<!-- Footer -->
+<footer class="text-center mt-5 py-3 border-top text-muted">
+  © 2025 PayPro | Dashboard UI built with Angular
+</footer>
