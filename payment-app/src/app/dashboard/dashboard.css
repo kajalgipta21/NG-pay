@@ -1,9 +1,9 @@
 /* Header Section */
 .dashboard-header {
-    background: linear-gradient(135deg, #007bff, #00c6ff);
+    background: linear-gradient(135deg, #6a28ee, #0586f8);
     color: white;
     border-radius: 0 0 30px 30px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 1px 4px 15px rgba(0, 0, 0, 0.2);
   }
   
   /* Card Styling */
@@ -11,7 +11,7 @@
     border-radius: 15px;
     transition: all 0.3s ease-in-out;
     box-shadow: 0 5px 15px rgba(0, 123, 255, 0.1);
-    background-color: #ffffff;
+    background: linear-gradient(135deg,#6a2ff4, #1a70fb);;
   }
   
   .dashboard-card:hover {
@@ -24,31 +24,36 @@
     font-size: 2.8rem;
     margin-bottom: 10px;
     transition: transform 0.3s;
+    color: #c8d2e3;
   }
   
   .dashboard-card:hover .dashboard-icon {
     transform: scale(1.1);
   }
-  
+  .navbar{
+    background: linear-gradient(135deg,#6a2ff4, #1a70fb);
+  }
   /* Navbar */
   .navbar-brand {
-    font-size: 1.5rem;
+    font-size: 2rem;
     letter-spacing: 1px;
+    color: aliceblue;
   }
   
   .navbar-nav .nav-link {
-    font-size: 1rem;
+    font-size: 1.5rem;
     margin-right: 15px;
     transition: color 0.2s ease;
+   color: rgb(243, 231, 231);
   }
   
   .navbar-nav .nav-link:hover {
-    color: #00c6ff;
+    color: #d7f226;
   }
   
   /* Footer */
   footer {
-    background-color: #f8f9fa;
+    background: linear-gradient(135deg, #6a28ee, #0586f8);
     font-size: 0.9rem;
   }
   

@@ -1,7 +1,11 @@
+body{
+  background: #ca8888;
+}
 .container {
     max-width: 500px;
     margin: 50px auto;
     padding: 25px;
+    background: linear-gradient(135deg, #6a28ee, #0586f8);
   }
   
   p-card {
@@ -9,36 +13,38 @@
     display: block;
     padding: 20px;
     border-radius: 12px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.887);
+    background: linear-gradient(135deg, #7330f8, #103bfb);
+    font-weight: 900;
+    
   }
   
   label {
-    font-weight: 600;
+    font-weight: 700;
     margin-bottom: 6px;
     display: block;
-    color: #333;
+    color: #000000;
   }
   
   input[type="text"],
   input[type="number"] {
     width: 100%;
     padding: 12px;
-    border: 1px solid #ccc;
+    border: 1px solid #969494;
     border-radius: 8px;
     font-size: 15px;
     transition: border-color 0.3s;
   }
   
   input:focus {
-    border-color: #007ad9;
+    border-color: #1942f9;
     outline: none;
   }
   
   button {
     width: 100%;
     padding: 12px;
-    background-color: #007ad9;
+    background: linear-gradient(135deg, #7330f8, #103bfb,#6a28ee);
     border: none;
     border-radius: 8px;
     color: white;

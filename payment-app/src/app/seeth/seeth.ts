@@ -10,8 +10,7 @@ import { RouterLink } from '@angular/router';
   templateUrl: './seeth.html',
   styleUrls: ['./seeth.css'],
   standalone: true, 
-  imports: [
-  
+  imports: [FormsModule,
     HttpClientModule,
     CommonModule,
     

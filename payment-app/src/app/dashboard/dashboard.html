@@ -1,7 +1,7 @@
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+<nav class="navbar navbar-expand-lg shadow-sm" styles="backgrou">
   <div class="container-fluid">
-    <a class="navbar-brand fw-bold" href="#">PayPro Dashboard</a>
+    <a class="navbar-brand fw-bold" href="#">Pay</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -11,8 +11,8 @@
         <li class="nav-item"><a class="nav-link" routerLink="/addmoney">Add Money</a></li>
         <li class="nav-item"><a class="nav-link" routerLink="/paymoney">Pay Money</a></li>
         <li class="nav-item"><a class="nav-link" routerLink="/checkb">Check Balance</a></li>
-        <li class="nav-item"><a class="nav-link" routerLink="/seeth"> SeeTransaction History</a></li>
-        <li class="nav-item"><a class="nav-link" routerLink="/deleteth">Delete History</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/seeth"> Transaction </a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/deleteth">Delete Transaction</a></li>
       </ul>
       
     </div>
@@ -30,8 +30,8 @@
   <div class="row g-4 text-center">
     
     <!-- Add Money -->
-<a [routerLink]="['/add-money']" class="col-md-4 text-decoration-none text-dark">
-  <div class="card dashboard-card h-100 text-center">
+<a [routerLink]="['/addmoney']" class="col-md-4 text-decoration-none text-light">
+  <div class="card dashboard-card h-100 text-center text-white text-center">
     <div class="card-body">
       <i class="bi bi-wallet2 dashboard-icon text-success"></i>
       <h5 class="card-title">Add Money</h5>
@@ -41,8 +41,8 @@
 </a>
 
 <!-- Pay Money -->
-<a [routerLink]="['/pay-money']" class="col-md-4 text-decoration-none text-dark">
-  <div class="card dashboard-card h-100 text-center">
+<a [routerLink]="['/paymoney']" class="col-md-4 text-decoration-none text-dark">
+  <div class="card dashboard-card h-100 text-center text-white text-center">
     <div class="card-body">
       <i class="bi bi-send-plus dashboard-icon text-primary"></i>
       <h5 class="card-title">Pay Money</h5>
@@ -52,8 +52,8 @@
 </a>
 
 <!-- Check Balance -->
-<a [routerLink]="['/check-balance']" class="col-md-4 text-decoration-none text-dark">
-  <div class="card dashboard-card h-100 text-center">
+<a [routerLink]="['/checkb']" class="col-md-4 text-decoration-none text-dark">
+  <div class="card dashboard-card h-100 text-center text-white text-center">
     <div class="card-body">
       <i class="bi bi-bank dashboard-icon text-info"></i>
       <h5 class="card-title">Check Balance</h5>
@@ -63,8 +63,8 @@
 </a>
 
 <!-- Transaction History -->
-<a [routerLink]="['/transaction-history']" class="col-md-6 text-decoration-none text-dark">
-  <div class="card dashboard-card h-100 text-center">
+<a [routerLink]="['/seeth']" class="col-md-6 text-decoration-none text-dark">
+  <div class="card dashboard-card h-100 text-center text-white text-center">
     <div class="card-body">
       <i class="bi bi-clock-history dashboard-icon text-warning"></i>
       <h5 class="card-title">Transaction History</h5>
@@ -74,8 +74,8 @@
 </a>
 
 <!-- Delete History -->
-<a [routerLink]="['/delete-history']" class="col-md-6 text-decoration-none text-dark">
-  <div class="card dashboard-card h-100 text-center">
+<a [routerLink]="['/deleteth']" class="col-md-6 text-decoration-none text-dark">
+  <div class="card dashboard-card h-100 text-center text-white text-center">
     <div class="card-body">
       <i class="bi bi-trash dashboard-icon text-danger"></i>
       <h5 class="card-title">Delete History</h5>
@@ -86,5 +86,5 @@
 
 <!-- Footer -->
 <footer class="text-center mt-5 py-3 border-top text-muted">
-  © 2025 PayPro | Dashboard UI built with Angular
+ 
 </footer>

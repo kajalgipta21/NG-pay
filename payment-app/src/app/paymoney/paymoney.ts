@@ -8,10 +8,7 @@ import { MyService } from '../myservice';
   selector: 'app-paymoney',
   templateUrl: './paymoney.html',
   styleUrls: ['./paymoney.css'],
-  imports: [
-    FormsModule,
-    HttpClientModule,CommonModule
-  ],
+  imports: [FormsModule,HttpClientModule,CommonModule ],
   providers:[MyService]
 })
 export class PayMoney {

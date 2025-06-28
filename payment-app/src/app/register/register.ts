@@ -27,6 +27,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 })
 export class Register {
   user = {
+    userid:'',
     username: '',
     email: '',
     phonenumber:'',
@@ -34,24 +35,34 @@ export class Register {
     password: ''
   };
   isLogin: any;
+  router: any;
 
   constructor(private myservice: MyService, private messageService: MessageService) {}
 
-  register() {
-    this.myservice.register(this.user).subscribe({
-      next: () => {
-        this.messageService.add({ severity: 'success', summary: 'Registered', detail: 'Welcome!' });
-      },
-      error: () => {
-        this.messageService.add({ severity: 'error', summary: 'Failed', detail: 'Registration failed' });
-      }
-    });
-  }
-  toggleForm() {
-    this.isLogin = !this.isLogin;
-  }
   
-}
+    register() {
+      this.myservice.register(this.user).subscribe({
+        next: (res) => {
+          this.messageService.add({ 
+            severity: 'success', 
+            summary: 'Registered', 
+            detail: 'Welcome!' 
+          });
+          this.router.navigate(['/login']);
+        },
+        error: (err) => {
+          console.error('Registration failed:', err);
+          this.messageService.add({ 
+            severity: 'error', 
+            summary: 'Failed', 
+            detail: 'Registration failed' 
+          });    
+  
+        }
+      });
+    }
+  
+      }
+    
 
-
-
+    
