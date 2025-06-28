@@ -2,7 +2,7 @@
     max-width: 500px;
     margin: 60px auto;
     padding: 30px;
-    background-color: #f9fafd;
+    background: linear-gradient(135deg, #6a28ee, #0586f8);
     border-radius: 15px;
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
@@ -10,7 +10,7 @@
   
   h3 {
     font-weight: 700;
-    color: #007bff;
+    color:white;
     margin-bottom: 20px;
   }
   
@@ -23,31 +23,32 @@
   input[type='tel'] {
     flex: 1;
     padding: 12px 15px;
-    border: 2px solid #ced4da;
+    border: 2px solid #ffffff;
     border-radius: 8px 0 0 8px;
     font-size: 16px;
     transition: border-color 0.3s;
   }
   
   input[type='tel']:focus {
-    border-color: #007bff;
+    border-color: #1e00ff;
     outline: none;
   }
   
   button[type='submit'] {
     padding: 12px 20px;
     border: none;
-    background-color: #007bff;
+    background-color: #1127cc;
     color: white;
     font-weight: 600;
     font-size: 16px;
     border-radius: 0 8px 8px 0;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    align-items: center;
   }
   
   button[disabled] {
-    background-color: #c6c6c6;
+    background-color: #ffffff;
     cursor: not-allowed;
   }
   
@@ -70,7 +71,7 @@
   
   .alert-success {
     background-color: #d4edda;
-    color: #155724;
+    color: #210698;
   }
   
   .alert-danger {

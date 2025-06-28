@@ -23,7 +23,8 @@ import { CommonModule } from '@angular/common';
       providers:[MyService]
 })
 export class Checkb {
-  phoneNumber: string = '';
+  PhoneNumber: string = '';
+  Password: string = '';
   balance: number | null = null;
   message = '';
   success = false;
@@ -31,7 +32,7 @@ export class Checkb {
   constructor(private myservice: MyService) {}
 
   checkBalance() {
-    this.myservice.getBalance(this.phoneNumber).subscribe({
+    this.myservice.getBalance(this.PhoneNumber,this.Password).subscribe({
       next: (res: any) => {
         this.balance = res.balance;
         this.message = 'Balance fetched successfully!';

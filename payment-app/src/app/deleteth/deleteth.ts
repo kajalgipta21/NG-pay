@@ -39,9 +39,10 @@ export class deleteth {
         this.transactions = data;
         this.searched = true;
       },
-      error: () => {
+      error: (err: any) => {
         this.transactions = [];
         this.searched = true;
+        console.error('Error fetching transaction history:', err);
       }
     });
   }
@@ -55,7 +56,7 @@ export class deleteth {
         this.success = true;
         this.transactions = [];
       },
-      error: () => {
+      error: (err : any) => {
         this.message = 'Failed to delete transactions.';
         this.success = false;
       }

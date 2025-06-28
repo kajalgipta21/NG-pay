@@ -1,5 +1,5 @@
 .container {
-    background: #ffffff;
+  background: linear-gradient(135deg, #6a28ee, #0586f8);
     border-radius: 20px;
     box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
     padding: 30px;
@@ -15,25 +15,25 @@
   
   h3 {
     font-weight: 700;
-    color: #007bff;
+    color: #ebf0f5;
   }
   
   .form-group label {
     font-weight: 600;
     margin-bottom: 5px;
-    color: #333;
+    color: #020202;
   }
   
   .form-control {
     border-radius: 8px;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #000000;
     transition: border 0.3s ease;
   }
   
   .form-control:focus {
-    border-color: #28a745;
-    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+    border-color: #fbfbfb;
+    box-shadow: 0 0 0 0.2rem rgba(160, 235, 177, 0.25);
   }
   
   button.btn-success {
@@ -42,10 +42,11 @@
     font-size: 16px;
     border-radius: 8px;
     transition: background-color 0.3s ease-in-out;
+    background-color: #49ec61;
   }
   
   button.btn-success:hover {
-    background-color: #218838;
+    background-color: #39f35b;
   }
   
   .alert {

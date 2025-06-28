@@ -4,7 +4,7 @@
     padding: 2rem;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     border-radius: 12px;
-    background: #c92b2b;
+    background: linear-gradient(135deg, #6a28ee, #0586f8);
     max-width: 450px;
   }
   
@@ -34,13 +34,13 @@
     width: 100%;
     border-radius: 8px;
     font-weight: bold;
-    background-color: #007bff;
+    background-color: #10ff63;
     border: none;
     transition: background-color 0.3s ease;
   }
   
   :host ::ng-deep button:hover {
-    background-color: #0056b3;
+    background-color: #055015;
   }
   
   /* Register button margin */

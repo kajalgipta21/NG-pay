@@ -1,13 +1,13 @@
 :host ::ng-deep .p-card {
-    background: #ffffff;
+  background: linear-gradient(135deg, #6a28ee, #0586f8);
     border-radius: 16px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 25px rgb(0, 0, 0);
     padding: 30px;
     transition: box-shadow 0.3s ease;
   }
   
   :host ::ng-deep .p-card:hover {
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 12px 30px rgb(0, 0, 0);
   }
   
   :host ::ng-deep .p-fluid .field {
@@ -18,14 +18,14 @@
     font-weight: 600;
     display: block;
     margin-bottom: 6px;
-    color: #333;
+    color: #000000;
   }
   
   :host ::ng-deep input[pInputText], 
   :host ::ng-deep input[type="email"], 
   :host ::ng-deep input[type="phonenumber"],
   :host ::ng-deep input[pPassword] {
-    width: 100%;
+    width: 50%;
     padding: 0.75rem;
     border: 1px solid #ccc;
     border-radius: 10px;
@@ -39,17 +39,17 @@
   }
   
   :host ::ng-deep button[pButton] {
-    width: 100%;
+    width: 50%;
     padding: 12px;
     font-weight: bold;
     border-radius: 10px;
-    background-color: #007bff;
+    background-color: #14ff4f;
     color: #fff;
     transition: background-color 0.3s ease;
   }
   
   :host ::ng-deep button[pButton]:hover {
-    background-color: #0056b3;
+    background-color: #056c16;
   }
   
   .text-center {

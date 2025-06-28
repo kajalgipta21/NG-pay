@@ -29,25 +29,39 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 })
 export class Login {
   credentials = {
-    username: '',
+    phonenumber: '',
     password: ''
   };
   router: any;
-
+  phonenumber!: string;
+  password!: string;
+ 
   constructor(private myservice: MyService, private messageService: MessageService) {}
 
   login() {
-    this.myservice.login(this.credentials).subscribe({
+    this.myservice.login({ phonenumber: this.phonenumber, password: this.password }).subscribe({
       next: (res) => {
-        this.messageService.add({ severity: 'success', summary: 'Login Success', detail: 'Token: ' + res.token });
-        this.router.navigate(['/dashboard']);
+        console.log('Login success:', res.token);
+
+        this.messageService.add({
+          severity: 'success',
+          summary: 'Login Successful',
+          detail: `Token: ${res.token}`
+        });
       },
-      error: () => {
-        this.messageService.add({ severity: 'error', summary: 'Login Failed', detail: 'Invalid credentials' });
+      error: (err) => {
+        console.error('Login failed', err);
+        this.messageService.add({
+          severity: 'error',
+          summary: 'Login Failed',
+          detail: 'Invalid username or password'
+        });
       }
     });
   }
 }
+
+
 
 
 
