@@ -17,11 +17,11 @@
       </div>
     </form>
   
-    <div *ngIf="transactions.length === 0 && searched" class="alert alert-warning text-center">
+    <div *ngIf="transactions && transactions.length === 0 && searched" class="alert alert-warning text-center">
       No transactions found.
     </div>
   
-    <div *ngIf="transactions.length > 0" class="table-responsive">
+    <div *ngIf=" transactions && transactions.length > 0" class="table-responsive">
       <table class="table table-bordered table-striped">
         <thead class="table-dark">
           <tr>

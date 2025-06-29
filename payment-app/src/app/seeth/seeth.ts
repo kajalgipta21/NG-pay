@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { MyService } from '../myservice';
+import { MyService, TransactionModel } from '../myservice';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 
@@ -21,13 +21,15 @@ export class Seeth {
   phoneNumber: string = '';
   transactions: any[] = [];
   searched: boolean = false;
+  TransactionModel: TransactionModel = new TransactionModel;
 
   constructor(private myservice: MyService) {}
 
   getTransactions() {
-    this.myservice.getTransactionHistory(this.phoneNumber).subscribe({
+    this.myservice.getTransactionHistory(this.TransactionModel).subscribe({
       next: (data) => {
-        this.transactions = data;
+       
+        this.transactions = data.result;
         this.searched = true;
       },
       error: (err) => {

@@ -33,10 +33,14 @@ export class deleteth {
 
   constructor(private myervice: MyService) {}
 
+ 
+
+  
   getTransactions() {
     this.myservice.getTransactionHistory(this.phoneNumber).subscribe({
-      next: (data: any[]) => {
-        this.transactions = data;
+      next: (data: { result: any[]; }) => {
+       
+        this.transactions = data.result;
         this.searched = true;
       },
       error: (err: any) => {
@@ -46,7 +50,7 @@ export class deleteth {
       }
     });
   }
-
+  
   deleteTransactions() {
     if (!confirm('Are you sure you want to delete all transactions for this number?')) return;
 

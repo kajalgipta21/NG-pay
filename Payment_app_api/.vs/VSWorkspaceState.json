@@ -4,8 +4,9 @@
     "\\Controllers",
     "\\Data",
     "\\Dto",
-    "\\Models"
+    "\\Models",
+    "\\Properties"
   ],
-  "SelectedNode": "\\Models\\Registeruser.cs",
+  "SelectedNode": "\\Program.cs",
   "PreviewInSolutionExplorer": false
 }

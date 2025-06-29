@@ -33,8 +33,9 @@ export class Login {
     password: ''
   };
   router: any;
-  phonenumber!: string;
-  password!: string;
+  phonenumber: any;
+  password: any;
+  
  
   constructor(private myservice: MyService, private messageService: MessageService) {}
 
