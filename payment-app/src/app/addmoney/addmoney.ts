@@ -1,70 +1,82 @@
-import { Component } from '@angular/core';
-
+import { Component, OnInit } from '@angular/core';
 import { MessageService } from 'primeng/api';
 import { InputTextModule } from 'primeng/inputtext';
 import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
 import { ToastModule } from 'primeng/toast';
-import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { MyService } from '../myservice';
-import { RouterLink } from '@angular/router';
+import { MyService, WalletModel } from '../myservice';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-money',
   templateUrl: './addmoney.html',
   styleUrls: ['./addmoney.css'],
-  providers: [MessageService,MyService],
-  imports: [
-    FormsModule,
-    HttpClientModule,
+  providers: [MessageService, MyService],
+  standalone: true, 
+   imports:[ FormsModule,
     ToastModule,
     CardModule,
     ButtonModule,
     InputTextModule,
   ]
 })
-export class AddMoney {
-  amount: number = 0;
-  phoneNumber: string = '';
+export class AddMoney implements OnInit {
+
+  phoneNumber: any;
+  walletModel = new WalletModel();
 
   constructor(
-    private myservice: MyService,
-    private messageService: MessageService
+    public myservice: MyService,
+    public router:Router
+    // public messageService: MessageService
   ) {}
 
+  ngOnInit(): void {
+    this.phoneNumber = sessionStorage.getItem("phonenumber");
+  }
+
   onAddMoney() {
-    if (!this.amount || !this.phoneNumber) {
-      this.messageService.add({
-        severity: 'warn',
-        summary: 'Missing Info',
-        detail: 'Please enter both amount and phone number'
-      });
-      return;
-    }
+    
+    this.walletModel.phoneNumber = this.phoneNumber;
 
-    const data = {
-      amount: this.amount,
-      phoneNumber: this.phoneNumber
-    };
+    // if (!this.walletModel.amount || !this.walletModel.phoneNumber) {
+    //   this.messageService.add({
+    //     severity: 'warn',
+    //     summary: 'Missing Info',
+    //     detail: 'Please enter amount'
+    //   });
+    //   return;
+    // }
 
-    this.myservice.addMoney( data).subscribe({
-      next: () => {
-        this.messageService.add({
-          severity: 'success',
-          summary: 'Success',
-          detail: 'Money added successfully!'
-        });
-        this.amount = 0;
-        this.phoneNumber = '';
+    this.myservice.addMoney(this.walletModel).subscribe({
+      next: (res) => {
+        if(res.response == "amount added successfully"){
+          alert("Added Money to wallet");
+          this.router.navigate(["/dashboard"])
+        }
+
+        // if (res.response === "amount added successfully") {
+        //   this.messageService.add({
+        //     severity: 'success',
+        //     summary: 'Success',
+        //     detail: 'Amount added successfully'
+        //   });
+        // } else {
+        //   this.messageService.add({
+        //     severity: 'warn',
+        //     summary: 'Failed',
+        //     detail: res.response
+        //   });
+        // }
       },
-      error: () => {
-        this.messageService.add({
-          severity: 'error',
-          summary: 'Error',
-          detail: 'Transaction failed. Try again!'
-        });
-      }
+      // error: () => {
+      //   this.messageService.add({
+      //     severity: 'error',
+      //     summary: 'Error',
+      //     detail: 'Transaction failed. Try again!'
+      //   });
+      // }
     });
   }
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { MyService, RegisterResponseDetailsModel } from '../myservice';
+import { MyService, register, RegisterResponseDetailsModel } from '../myservice';
 import { MessageService } from 'primeng/api';
 import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
@@ -26,69 +26,40 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
     ToastModule,
     CommonModule,
     FormsModule,
-    RouterLink,
-    RouterLinkActive,
+    
     HttpClientModule
   ]
 })
 export class Register implements OnInit {
-  user = {
-    userid: '',
-    username: '',
-    email: '',
-    phonenumber: '',
-    gender: '',
-    password: ''
-  };
+
 
   isLogin: boolean = false;
   responseData: any;
   userCheck: boolean = false;
 
   constructor(
-    private myservice: MyService,
+    public myservice: MyService,
     private messageService: MessageService,
     private router: Router
   ) {}
-
+ user:register = new register();
+ data:any;
   ngOnInit(): void {
-    if (this.myservice.loggedInUser?.phoneNumber) {
+    if (Boolean(sessionStorage.getItem("isLoggedIn"))) {
       this.router.navigate(['/dashboard']);
     }
   }
 
-  register() {
-    
-    const model: RegisterResponseDetailsModel = {
-      userId: Number(this.user.userid),
-
-      username: this.user.username,
-      email: this.user.email,
-      phoneNumber: this.user.phonenumber,
-      gender: this.user.gender,
-      password: this.user.password,
-      amount: 0,
-      imageUrl: undefined,
-      createDate: undefined,
-      isAdmin: undefined
-    };
-
-    this.myservice.register(model).subscribe({
-      next: () => {
+  adduser() {
+    this.myservice.register(this.user).subscribe(data=> {
+      this.data = data;
+      if(this.data.response=="Registered Successfully !!")
+      {
         this.messageService.add({
           severity: 'success',
-          summary: 'Registered',
-          detail: 'Welcome!'
+          summary: 'Registered Successful'
         });
         this.router.navigate(['/login']);
-      },
-      error: (err) => {
-        console.error('Registration failed:', err);
-        this.messageService.add({
-          severity: 'error',
-          summary: 'Failed',
-          detail: 'Registration failed'
-        });
       }
     });
   }

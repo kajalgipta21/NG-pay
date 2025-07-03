@@ -1,33 +1,26 @@
 <div class="container mt-5 p-4 shadow rounded bg-light" style="max-width: 500px;">
     <h3 class="text-center text-white mb-4">Check Balance</h3>
   
-    <form (ngSubmit)="checkBalance()" #form="ngForm">
+    <form (ngSubmit)="checkBalanceuser()" #form="ngForm">
       <div class="input-group mb-3">
         <input
           type="tel"
           class="form-control"
           placeholder="Enter phone number"
           name="phoneNumber"
-          [(ngModel)]="PhoneNumber"
+          [(ngModel)]="Balance.phonenumber"
           required
         /></div>
-        <div class="input-group mb-3">
-        <input
-        type="tel"
-        class="form-control"
-        placeholder="Enter your password"
-        name="password"
-        [(ngModel)]="Password"
-        required
-      /> </div>
+       
+        
       <div class="input-group mb-3">
         <button type="submit" class="btn btn-primary" [disabled]="!form.form.valid">Check</button>
       </div>
     </form>
   
-    <div *ngIf="balance !== null" class="alert alert-info text-center">
-      <strong>Balance:</strong> ₹{{ balance }}
-    </div>
+    <!-- <div *ngIf="balance !== null" class="alert alert-info text-center">
+    </div> -->
+    <strong>Balance:</strong> ₹{{ balance }}
   
     <div *ngIf="message" class="alert mt-3" [ngClass]="{ 'alert-success': success, 'alert-danger': !success }">
       {{ message }}

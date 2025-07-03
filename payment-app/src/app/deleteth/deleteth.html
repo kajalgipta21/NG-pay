@@ -8,7 +8,7 @@
           class="form-control"
           placeholder="Enter phone number"
           name="phoneNumber"
-          [(ngModel)]="phoneNumber"
+          [(ngModel)]="TransactionModel.PhoneNumber"
           required
         />
         <button type="submit" class="btn btn-primary" [disabled]="!form.form.valid">
@@ -36,10 +36,13 @@
           </thead>
           <tbody>
             <tr *ngFor="let txn of transactions">
-              <td>{{ txn.date | date: 'short' }}</td>
-              <td>{{ txn.type }}</td>
-              <td>₹{{ txn.amount }}</td>
-              <td>{{ txn.partyPhone }}</td>
+              <td>{{ txn.transactionDate | date: 'short' }}</td>
+            <td>{{ txn.transactionType }}</td>
+            <td>{{ txn.userId }}</td>
+            <td>₹{{ txn.initialAmount }}</td>
+            <td>₹{{ txn.transferAmount }}</td>
+            <td>{{ txn.receiverName }}</td>
+            <td> <button class="btn btn-danger mb-3" (click)="delete()">Delete</button></td>
             </tr>
           </tbody>
         </table>

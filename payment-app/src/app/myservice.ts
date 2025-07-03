@@ -9,7 +9,7 @@ export class MyService {
   loggedInUser:RegisterResponseDetailsModel = new RegisterResponseDetailsModel();
 
    masterUrl="https://skytm-api.azurewebsites.net"
-    baseUrl = 'http://localhost:3000';
+    // baseUrl = 'http://localhost:3000';
    
 
   constructor(public http: HttpClient){ 
@@ -21,11 +21,11 @@ export class MyService {
   }
   
 
-  getBalance(data: string, Password: string):Observable<WalletDetailsModel> {
-    return this.http.get<WalletDetailsModel>(this.masterUrl+"/api/Users/balance?phoneNumber="+data)
+  getBalance(data:Balance  ):Observable<WalletDetailsModel> {
+    return this.http.get<WalletDetailsModel>(this.masterUrl+"/api/Users/balance?phoneNumber="+data.phonenumber)
   }
 
-  register(data: RegisterResponseDetailsModel):Observable<WalletDetailsModel> {
+  register(data:register):Observable<WalletDetailsModel> {
     return this.http.post<WalletDetailsModel>(this.masterUrl+"/api/Auth/signup",data);
   }
 
@@ -56,6 +56,11 @@ export class login {
   phonenumber: string | undefined
   password: string | undefined
 }
+export class Balance {
+  phonenumber: string | undefined | null
+  password: string | undefined
+  amount: any;
+}
 
 
 
@@ -65,8 +70,6 @@ export class register {
   phoneNumber: string | undefined;
   gender: string | undefined;
   password: string | undefined;
-  imageUrl: string | undefined;
-  isAdmin: boolean  = false ;
 }
 
 
@@ -81,6 +84,9 @@ export class WalletDetailsModel {
   response: string | undefined;
   responseCode: string | undefined;
   token: any;
+  Balance: Balance | undefined;
+  
+  
 }
 
 export class RegisterResponseDetailsModel{
@@ -92,7 +98,7 @@ export class RegisterResponseDetailsModel{
   password: string | undefined;
   amount!: number ;
   imageUrl: string | undefined;
-  createDate: string | undefined;  // or use `Date` if you parse it
+  createDate: string | undefined;  
   isAdmin: boolean | undefined;
 }
 
@@ -122,25 +128,33 @@ export class TransactionModel {
   transactionDate!: string; // Consider using Date if parsing needed
   initialAmount!: number;
   transferAmount!: number;
+  static result: any[];
+  static phoneNumber: any;
+PhoneNumber: any;
 }
 
 export class TransferRequestModel {
+  static phoneNumber(phoneNumber: any) {
+    throw new Error('Method not implemented.');
+  }
   senderPhoneNumber!: string;
   receiverPhoneNumber!: string;
   amount!: number;
+  phoneNumber: any;
+  static result: any[];
+
 }
 
 export class TransferResponseModel {
   result: any = null;
   response: string = '';
   responseCode: string = '';
+  message: string | undefined;
 }
 
 export class AddtoWalletResponseModel {
   amount!: number;
   response!: string;
   responseCode!: string;
+  message: string | undefined;
 }
-
-
-

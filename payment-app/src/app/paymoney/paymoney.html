@@ -11,7 +11,7 @@
           class="form-control"
           required
           name="senderPhone"
-          [(ngModel)]="payment.senderPhone"
+          [(ngModel)]="TransferRequestModel.senderPhoneNumber"
           placeholder="Enter your phone number"
         />
       </div>
@@ -24,7 +24,7 @@
           class="form-control"
           required
           name="receiverPhone"
-          [(ngModel)]="payment.receiverPhone"
+          [(ngModel)]="TransferRequestModel.receiverPhoneNumber"
           placeholder="Enter receiver's phone number"
         />
       </div>
@@ -37,7 +37,7 @@
           class="form-control"
           required
           name="amount"
-          [(ngModel)]="payment.amount"
+          [(ngModel)]="TransferRequestModel.amount"
           placeholder="Enter amount"
           min="1"
         />

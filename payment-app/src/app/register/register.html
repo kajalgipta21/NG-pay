@@ -2,10 +2,6 @@
 <p-card header="Register" class="w-50 mx-auto mt-5 bg-dark">
     <div class="p-fluid">
       <div class="field">
-        <label>UserID</label>
-        <input pInputText [(ngModel)]="user.userid" />
-      </div>
-      <div class="field">
         <label>Username</label>
         <input pInputText [(ngModel)]="user.username" />
       </div>
@@ -15,7 +11,7 @@
       </div>
       <div class="field">
       <label>PhoneNumber</label>
-        <input pInputText type="phonenumber" [(ngModel)]="user.phonenumber" />
+        <input pInputText type="phonenumber" [(ngModel)]="user.phoneNumber" />
       </div>
       <div class="field">
 
@@ -26,7 +22,7 @@
         <label>Password</label>
         <input pPassword [(ngModel)]="user.password" toggleMask="true" />
       </div>
-      <button pButton label="Register" class="mt-3" (click)="register()" routerLink="/dashboard" routerLinkActive="router-link-active" ></button>
+      <button pButton label="Register" class="mt-3" (click)="adduser()"></button>
     </div>
     >
         

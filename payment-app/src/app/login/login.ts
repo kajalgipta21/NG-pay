@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 import { MessageService } from 'primeng/api';
-import { MyService } from '../myservice';
+import { login, MyService } from '../myservice';
 import { PasswordModule } from 'primeng/password';
 import { ToastModule } from 'primeng/toast';
 import { CardModule } from 'primeng/card';
@@ -11,7 +11,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -28,27 +28,30 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
     ToastModule]
 })
 export class Login {
-  credentials = {
-    phonenumber: '',
-    password: ''
-  };
-  router: any;
-  phonenumber: any;
-  password: any;
+  
   
  
-  constructor(private myservice: MyService, private messageService: MessageService) {}
+  constructor(public myservice: MyService, 
+    private messageService: MessageService,
+  private router:Router) {}
 
+  credentials:login = new login(); 
+  phonenumber: any;
+  password: any;
   login() {
-    this.myservice.login({ phonenumber: this.phonenumber, password: this.password }).subscribe({
+    this.myservice.login(this.credentials).subscribe({
       next: (res) => {
-        console.log('Login success:', res.token);
-
-        this.messageService.add({
-          severity: 'success',
-          summary: 'Login Successful',
-          detail: `Token: ${res.token}`
-        });
+        if(res.response=="Login Successfully !!")
+        {
+          this.messageService.add({
+            severity: 'success',
+            summary: 'Login Successful',
+            detail: `Token: ${res.token}`
+          });
+          sessionStorage.setItem("phonenumber",res.result.phoneNumber);
+          sessionStorage.setItem("isLoggedIn","true");
+          this.router.navigate(['/dashboard']);
+        }
       },
       error: (err) => {
         console.error('Login failed', err);
